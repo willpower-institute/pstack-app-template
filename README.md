@@ -23,7 +23,7 @@ grep -rl app_addons --exclude-dir=.git . | xargs sed -i "s/app_addons/$NEW/g"
 ต้องมี pstack checkout ไว้ข้างๆ (pin tag เดียวกับ `PSTACK_REF` ใน .env.example):
 
 ```bash
-git clone --branch v0.1.0 https://github.com/willpower-institute/pstack.git ../pstack
+git clone --branch v0.5.1 https://github.com/willpower-institute/pstack.git ../pstack
 python3 -m venv .venv && .venv/bin/pip install -e "../pstack[dev]"
 
 export PSTACK_ADDONS_PATHS=../pstack/addons,app_addons

@@ -3,7 +3,7 @@ services:
     build:
       context: .
       args:
-        PSTACK_REF: ${PSTACK_REF:-v0.1.0}
+        PSTACK_REF: ${PSTACK_REF:-v0.5.1}
     restart: unless-stopped
     env_file: .env
     ports:
@@ -24,7 +24,7 @@ services:
     build:
       context: .
       args:
-        PSTACK_REF: ${PSTACK_REF:-v0.1.0}
+        PSTACK_REF: ${PSTACK_REF:-v0.5.1}
     restart: unless-stopped
     # `python -m arq` ใส่ CWD (/app) ลง sys.path — resolve core/<app>_addons จาก /app
     # (arq เป็น console script ไม่ใส่ CWD ให้ → worker บูตไม่ขึ้น pstack#4)
