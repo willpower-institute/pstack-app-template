@@ -19,7 +19,8 @@ if "PSTACK_ADDONS_PATHS" not in os.environ:
             break
 
 os.environ["PSTACK_DATABASE_URL"] = "sqlite+aiosqlite:///./test_app.db"
-os.environ["PSTACK_SECRET_KEY"] = "test-secret"
+os.environ["PSTACK_SECRET_KEY"] = "test-key-" + "x" * 40
+os.environ["PSTACK_ADMIN_PASSWORD"] = "test-admin-pw-9f3k2x"
 os.environ["PSTACK_MODULES"] = "users,demo"
 
 import pytest
@@ -53,7 +54,7 @@ def test_demo_module(client):
 
 def test_pstack_auth_works(client):
     r = client.post(
-        "/api/auth/login", json={"email": "admin@example.com", "password": "admin"}
+        "/api/auth/login", json={"email": "admin@example.com", "password": "test-admin-pw-9f3k2x"}
     )
     assert r.status_code == 200
     token = r.json()["access_token"]
