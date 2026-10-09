@@ -1,0 +1,32 @@
+# repo.yaml: Knowledge Standard draft schema v0.2 (private central source, reviewed at 68a45dd).
+# NOTE for apps created from this template: replace every value below for your app.
+schema_version: "0.2"
+name: willpower-institute/pstack-app-template
+owner:
+  team: pstack (BaaS)
+  humans: [TBD]
+workstream: "pstack (BaaS)"
+status: active
+purpose: "Template for apps built on pstack: addons-only repo pinned to a pstack tag."
+default_branch: main
+version_source: TBD          # template has no version of its own
+stack: [Python, pstack, Docker Compose, PostgreSQL 16, Redis 7, pytest]
+depends_on:
+  - repo: willpower-institute/pstack
+    pin: v0.5.1               # PSTACK_REF in Dockerfile / docker-compose.yml
+    why: "kernel; app repos never modify it"
+supersedes: []
+superseded_by: null
+canonical_for:
+  - "starting layout for new pstack apps"
+knowledge_files:
+  agents_md: AGENTS.md
+  claude_md: null
+  adr_dir: null
+  rationale_home: "README.md and ws-001 discussion dis-fa078bf8"
+  changelog: null
+  changelog_alternative: "git log and GitHub pull-request history"
+  openapi: null
+last_reviewed: 2026-10-09
+review_interval_days: 90
+ws001: [dis-fa078bf8]
